@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import SearchInput from '@/components/product/SearchInput';
 
+import NoProductsFound from './NoProductsFound';
 import ProductCard from './ProductCard';
 
 const PRODUCTS_PER_PAGE = 6;
@@ -20,8 +21,6 @@ const products = Array.from({ length: 12 }, (_, index) => ({
 
 export default function ProductGrid() {
   const [currentPage, setCurrentPage] = useState(1);
-
-  // eslint-disable-next-line
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredProducts = products.filter((product) =>
@@ -36,10 +35,12 @@ export default function ProductGrid() {
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
+    setCurrentPage(1);
   };
 
   const handleClearSearch = () => {
     setSearchQuery('');
+    setCurrentPage(1);
   };
 
   return (
@@ -53,28 +54,34 @@ export default function ProductGrid() {
         />
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-        {currentProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      {filteredProducts.length > 0 ? (
+        <>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {currentProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
 
-      {totalPages > 1 && (
-        <div className='mt-8 flex justify-center gap-2'>
-          {Array.from({ length: totalPages }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentPage(index + 1)}
-              className={`px-4 py-2 rounded ${
-                currentPage === index + 1
-                  ? 'bg-blue-600 text-white'
-                  : 'bg-gray-200 hover:bg-gray-300'
-              }`}
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div>
+          {totalPages > 1 && (
+            <div className='mt-8 flex justify-center gap-2'>
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentPage(index + 1)}
+                  className={`px-4 py-2 rounded ${
+                    currentPage === index + 1
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-gray-200 hover:bg-gray-300'
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+          )}
+        </>
+      ) : (
+        searchQuery && <NoProductsFound searchQuery={searchQuery} />
       )}
     </section>
   );
