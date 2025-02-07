@@ -32,10 +32,28 @@ const allFeatures = [
   'Temperature Sensor',
 ];
 
+const productNames = [
+  'Nova X1 Pro Smartwatch',
+  'Atlas Fitness Tracker',
+  'Pulse Elite Watch',
+  'Quantum Health Monitor',
+  'Zenith Sport Watch',
+  'Apex Performance Tracker',
+  'Luna Health Watch',
+  'Velocity Smart Band',
+  'Echo Fitness Pro',
+  'Titan Premium Watch',
+  'Spectra Health Band',
+  'Cosmos Activity Tracker',
+  'Phoenix Health Pro',
+  'Orion Smart Monitor',
+  'Nexus Fitness Watch',
+];
+
 const generateProducts = (count = 50): Product[] => {
   return Array.from({ length: count }, (_, index) => ({
     id: index + 1,
-    name: `Smartwatch Pro ${index + 1}`,
+    name: productNames[index % productNames.length],
     description: `Advanced smartwatch with cutting-edge health and fitness tracking technologies`,
     price: 199.99 + index * 10,
     rating: Number((4 + Math.random()).toFixed(1)),
