@@ -4,6 +4,10 @@
 
 E-commerce application built with Next.js 14, TypeScript, TailwindCSS, and tested with Mock Service Worker.
 
+## Introduction
+
+The project was built for less than 4 hours by rywizard.
+
 ## Tech Stack
 
 - Next.js 14 (App Router)
@@ -29,11 +33,11 @@ E-commerce application built with Next.js 14, TypeScript, TailwindCSS, and teste
 git clone [repository-url]
 
 # Install dependencies
-npm install
+pnpm install
 
 # Setup Husky
-npm run prepare
+pnpm run prepare
 
 # Run development server
-npm run dev
+pnpm run dev
 ```
