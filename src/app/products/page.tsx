@@ -1,14 +1,19 @@
-'use client';
-import * as React from 'react';
+// app/products/page.tsx
+import type { Metadata } from 'next';
 
-import Features from '@/components/product/Features';
-import ProductGrid from '@/components/product/ProductGrid';
+import ProductsPage from '@/app/components/ProductsPage';
 
-export default function HomePage() {
-  return (
-    <div className='product-page'>
-      <ProductGrid />
-      <Features />
-    </div>
-  );
+export const metadata: Metadata = {
+  title: 'Products | Premium Tech Collection',
+  description:
+    'Browse our premium electronics, featuring high-quality headphones and tech gadgets',
+  openGraph: {
+    title: 'TechStore Products',
+    description: 'Premium Electronics Collection',
+    images: ['/images/product.webp'],
+  },
+};
+
+export default function Page() {
+  return <ProductsPage />;
 }

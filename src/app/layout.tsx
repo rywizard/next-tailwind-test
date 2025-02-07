@@ -19,8 +19,8 @@ interface SiteConfig {
 }
 
 const siteConfig: SiteConfig = {
-  title: 'Smartwatch Store',
-  description: 'Premium smartwatches for your active lifestyle',
+  title: 'TechStore',
+  description: 'Premium Electronics and Tech Gadgets Store',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
 };
 
