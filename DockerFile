@@ -1,0 +1,23 @@
+# Use an official Node.js runtime as the base image
+FROM node:18-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and pnpm-lock.yaml (if using pnpm)
+COPY package.json pnpm-lock.yaml ./
+
+# Install project dependencies
+RUN pnpm install --frozen-lockfile  # Optional: ensures the lockfile is respected
+
+# Copy the rest of the application files
+COPY . .
+
+# Build the Next.js application
+RUN pnpm run build
+
+# Expose the port that the app will run on
+EXPOSE 3000
+
+# Start the Next.js application
+CMD ["pnpm", "start"]
