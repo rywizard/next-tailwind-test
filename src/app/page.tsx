@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 
-import ProductCard from '@/components/product/ProductCard';
+import ProductGrid from '@/components/product/ProductGrid';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -10,7 +10,7 @@ import ProductCard from '@/components/product/ProductCard';
 export default function HomePage() {
   return (
     <div className='product-page'>
-      <ProductCard />
+      <ProductGrid />
     </div>
   );
 }

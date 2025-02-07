@@ -38,7 +38,7 @@ const ProductCard = ({ product = sampleProduct }: ProductCardProps) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className='relative overflow-hidden aspect-[3/4]'>
+      <div className='relative overflow-hidden aspect-[4/4]'>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.image}

@@ -71,7 +71,9 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
     <html lang='en' className={openSans.className}>
       <body className='min-h-screen bg-gray-50 font-sans antialiased'>
         <Header />
-        <main className='relative flex min-h-screen flex-col'>{children}</main>
+        <main className='relative flex min-h-screen flex-col pt-20'>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
