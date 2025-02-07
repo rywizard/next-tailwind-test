@@ -1,4 +1,5 @@
 import { Search } from 'lucide-react';
+import { memo } from 'react';
 
 interface NoProductsFoundProps {
   searchQuery: string;
@@ -22,4 +23,4 @@ const NoProductsFound: React.FC<NoProductsFoundProps> = ({ searchQuery }) => (
   </div>
 );
 
-export default NoProductsFound;
+export default memo(NoProductsFound);

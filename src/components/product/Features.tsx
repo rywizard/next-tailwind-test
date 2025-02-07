@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 const Features = () => {
   const features = [
@@ -48,4 +48,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default memo(Features);
