@@ -45,10 +45,15 @@ export default {
             backgroundPosition: '700px 0',
           },
         },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
         shimmer: 'shimmer 1.3s linear infinite',
+        fadeIn: 'fadeIn 0.2s ease-out',
       },
     },
   },
