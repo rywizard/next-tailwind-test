@@ -4,8 +4,6 @@ import * as React from 'react';
 
 import '@/styles/globals.css';
 
-import Header from '@/components/Header';
-
 const openSans = Open_Sans({
   subsets: ['latin'],
   display: 'swap',
@@ -69,7 +67,6 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html lang='en' className={openSans.className}>
       <body className='min-h-screen bg-gray-50 font-sans antialiased'>
-        <Header />
         <main className='relative flex min-h-screen flex-col'>{children}</main>
       </body>
     </html>
