@@ -1,7 +1,7 @@
 'use client';
 
 import { Search, XCircle } from 'lucide-react';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 interface SearchInputProps {
   value: string;
@@ -59,4 +59,4 @@ const SearchInput: React.FC<SearchInputProps> = ({
   );
 };
 
-export default SearchInput;
+export default memo(SearchInput);

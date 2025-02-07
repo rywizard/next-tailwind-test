@@ -1,5 +1,7 @@
+import { memo } from 'react';
+
 // src/components/common/Footer.tsx
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className='bg-gray-900 text-white'>
       <div className='container mx-auto px-4 py-12'>
@@ -60,4 +62,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default memo(Footer);

@@ -2,7 +2,7 @@
 'use client';
 
 import { Heart, ShoppingCart, Star } from 'lucide-react';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 // Sample product data
 const sampleProduct = {
   id: 1,
@@ -119,4 +119,4 @@ const ProductCard = ({ product = sampleProduct }: ProductCardProps) => {
   );
 };
 
-export default ProductCard;
+export default memo(ProductCard);
