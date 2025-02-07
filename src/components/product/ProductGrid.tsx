@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import SearchInput from '@/components/product/SearchInput';
+
 import ProductCard from './ProductCard';
 
 const PRODUCTS_PER_PAGE = 6;
@@ -32,8 +34,25 @@ export default function ProductGrid() {
     currentPage * PRODUCTS_PER_PAGE
   );
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleClearSearch = () => {
+    setSearchQuery('');
+  };
+
   return (
     <section className='container mx-auto px-4 py-12'>
+      <div className='mb-8'>
+        <SearchInput
+          value={searchQuery}
+          onChange={handleSearchChange}
+          onClear={handleClearSearch}
+          placeholder='Search for smartwatches...'
+        />
+      </div>
+
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {currentProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
